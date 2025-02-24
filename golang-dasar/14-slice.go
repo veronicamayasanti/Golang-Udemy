@@ -43,4 +43,41 @@ func main() {
 	//	make([]TypeData, length, capacity)		membuat slice baru
 	//	copy(destination, source)	menyalin slice dari source ke destination
 
+	numbers := [...]string{"one", "two", "three", "four", "five", "six", "seven"}
+	// array[low:]
+	//Membuat slide dari array dimulai index low sampai index akhir di array
+	numbers5 := numbers[4:]
+	numbers5[0] = "five-update"
+	fmt.Println("this ini slice numbers = ", numbers)
+	fmt.Println("this ini slice [4:] = ", numbers5)
+	fmt.Println("this ini slice [0] update =", numbers5)
+
+	numbersNew := append(numbers5, "delapan", "sembilan", "sepuluh")
+	fmt.Println("this ini slice numbersNew = ", numbersNew)
+	numbersNew[0] = "lima"
+	fmt.Println("this ini slice numbersNew [0] update = ", numbersNew)
+	fmt.Println(numbers)
+
+	//	make([]TypeData, length, capacity) : Membuat slice baru
+	newSlice := make([]string, 3, 5) // 3= panjang slice, 5=kapasitas slice
+	newSlice[0] = "one"
+	newSlice[1] = "two"
+	newSlice[2] = "three"
+	fmt.Println("make newslice : ", newSlice)
+	fmt.Println("length newSlice = ", len(newSlice))
+	fmt.Println("capacity newSlice = ", cap(newSlice))
+
+	//	 copy(destination, source)
+	//Menyalin slice dari source ke destination
+	fromSlice := days[:]
+	toSlice := make([]string, len(fromSlice))
+	copy(toSlice, fromSlice)
+	fmt.Println("fromSlice : ", fromSlice)
+	fmt.Println("toSlice : ", toSlice)
+
+	//membedakan array dan slice
+	iniArray := [...]int{1, 2, 3, 4, 5}
+	iniSlice := []int{1, 2, 3, 4, 5}
+	fmt.Println("iniArray : ", iniArray)
+	fmt.Println("iniSlice : ", iniSlice)
 }
