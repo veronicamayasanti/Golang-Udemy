@@ -16,6 +16,10 @@ type Customer struct {
 //	struct tidak bisa langsung digunakan
 //	namun kita bisa membuat data/object dari struct yang telah dibuat
 
+func (customer Customer) sayHello(name string) {
+	fmt.Println("hello", name, "my name is", customer.Name)
+}
+
 func main() {
 	var maya Customer
 	maya.Name = "maya dev"
@@ -37,4 +41,5 @@ func main() {
 	veronica := Customer{"veronica", "jakarta", 34}
 	fmt.Println(veronica)
 
+	santi.sayHello("samantha")
 }
